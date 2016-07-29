@@ -98,8 +98,8 @@ class OneOfSchema(Schema):
             result.data[self.type_field] = obj_type
         return result
 
-    def load(self, data, many=None, partial=None):
-        if not many:
+    def load(self, data, partial=None):
+        if not self.many:
             return self._load(data, partial=partial)
 
         result_data = []
